@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Buddy",
+    "type": "Dog",
+    "breed": "Golden Retriever",
+    "age": 3,
+    "description": "A friendly golden retriever who loves to play fetch.",
+    "image": "https://example.com/images/buddy.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mittens",
+    "type": "Cat",
+    "breed": "Siamese",
+    "age": 2,
+    "description": "A playful Siamese cat with a curious personality.",
+    "image": "https://example.com/images/mittens.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Coco",
+    "type": "Dog",
+    "breed": "Poodle",
+    "age": 5,
+    "description": "An intelligent poodle who enjoys agility training.",
+    "image": "https://example.com/images/coco.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Whiskers",
+    "type": "Cat",
+    "breed": "Persian",
+    "age": 4,
+    "description": "A fluffy Persian cat that loves lounging in the sun.",
+    "image": "https://example.com/images/whiskers.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Goldie",
+    "type": "Fish",
+    "breed": "Goldfish",
+    "age": 1,
+    "description": "A cheerful goldfish that loves swimming around its bowl.",
+    "image": "https://example.com/images/goldie.jpg"
+  }
+]
