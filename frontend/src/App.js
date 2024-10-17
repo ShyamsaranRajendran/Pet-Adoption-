@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home/HomePage';
 import PetListingsPage from './pages/PetListings/PetListingsPage';
-
+import Header from  './pages/Utils/Header.jsx';
+import Footer from './pages/Utils/Footer.jsx';
 // Import other pages
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/pets" element={<PetListingsPage />} />
@@ -19,6 +21,7 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/about" element={<AboutPage />} /> */}
       </Routes>
+      <Footer/>
     </Router>
   );
 }
