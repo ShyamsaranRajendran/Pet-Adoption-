@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/Home/HomePage';
+import PetListingsPage from './pages/PetListings/PetListingsPage';
 
+// Import other pages
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/pets" element={<PetListingsPage />} />
+        {/* <Route path="/pet/:id" element={<PetDetailsPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/application/:id" element={<ApplicationPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/create-pet" element={<CreateEditPetPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/about" element={<AboutPage />} /> */}
+      </Routes>
+    </Router>
   );
 }
 
