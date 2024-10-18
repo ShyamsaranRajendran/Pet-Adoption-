@@ -1,109 +1,100 @@
 import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom"; // Import useParams and useNavigate for routing
+import { getPetById, updatePet } from "../../api/DashboardApi"; // Adjust the import path to your API file
 import "./css/CreateEditPetPage.css"; // Optional CSS for styling
 
-const EditPetPage = ({ match }) => {
+const EditPetPage = () => {
+  const { id } = useParams(); // Use useParams to get the pet ID from the URL
+  const navigate = useNavigate(); // Initialize navigate
   const [petData, setPetData] = useState({
+    ID: "",
     name: "",
-    type: "",
-    breed: "",
     age: "",
-    description: "",
-    image: "",
+    sex: "",
+    breed: "",
+    date_found: "",
+    adoptable_from: "",
+    posted: "",
+    color: "",
+    coat: "",
+    size: "",
+    neutered: "",
   });
 
   useEffect(() => {
-    // Simulate fetching pet data when editing
-    const fetchPetData = () => {
-      const simulatedData = {
-        id: match.params.id,
-        name: "Simulated Pet Name",
-        type: "Dog",
-        breed: "Labrador",
-        age: "2 years",
-        description: "A friendly and energetic dog.",
-        image: "http://example.com/pet-image.jpg",
-      };
-      setPetData(simulatedData);
+    const fetchPetData = async () => {
+      try {
+        const data = await getPetById(id); // Fetch pet data by ID
+        // Extracting fields to match the state structure
+        setPetData({
+          ID: data.ID?.$numberInt, // Convert to a number if needed
+          name: data.name,
+          age: data.age?.$numberDouble, // Convert to a number if needed
+          sex: data.sex,
+          breed: data.breed,
+          date_found: data.date_found,
+          adoptable_from: data.adoptable_from,
+          posted: data.posted,
+          color: data.color,
+          coat: data.coat,
+          size: data.size,
+          neutered: data.neutered,
+        });
+      } catch (error) {
+        console.error("Error fetching pet data:", error.message);
+      }
     };
+
     fetchPetData();
-  }, [match.params.id]);
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPetData({ ...petData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulated API request for updating the pet
-    console.log("Updating Pet Data:", petData);
-    alert("Pet updated successfully!");
-    // Reset form after submission
+    try {
+      await updatePet(id, petData); // Call the update API with pet ID and data
+      alert("Pet updated successfully!");
+      navigate("/dashboard"); // Redirect to the dashboard after updating
+    } catch (error) {
+      console.error("Error updating pet:", error.message);
+      alert("Failed to update pet. Please try again.");
+    }
   };
 
   return (
-    <div className="create-edit-pet-page">
-      <h1>Edit Pet</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Pet Name</label>
-          <input
-            type="text"
-            name="name"
-            value={petData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="type">Pet Type</label>
-          <input
-            type="text"
-            name="type"
-            value={petData.type}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="breed">Breed</label>
-          <input
-            type="text"
-            name="breed"
-            value={petData.breed}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="age">Age</label>
-          <input
-            type="text"
-            name="age"
-            value={petData.age}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="description">Description</label>
-          <textarea
-            name="description"
-            value={petData.description}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="image">Image URL</label>
-          <input
-            type="text"
-            name="image"
-            value={petData.image}
-            onChange={handleChange}
-            required
-          />
-        </div>
+    <div className="edit-pet-page">
+      <h1 className="edit-pet-title">Edit Pet Information</h1>
+      <p className="edit-pet-description">
+        Update the details of the pet below. Please ensure all fields are filled
+        out correctly.
+      </p>
+      <form onSubmit={handleSubmit} className="edit-pet-form">
+        {Object.keys(petData).map((key) => (
+          <div className="form-group" key={key}>
+            <label htmlFor={key} className="form-label">
+              {key.replace("_", " ").toUpperCase()}
+            </label>
+            <input
+              type={
+                key === "date_found" ||
+                key === "adoptable_from" ||
+                key === "posted"
+                  ? "date"
+                  : "text"
+              }
+              name={key}
+              value={petData[key]}
+              onChange={handleChange}
+              required
+              className="form-input"
+              readOnly={key === "ID"} // Assuming ID is not editable
+            />
+          </div>
+        ))}
         <button type="submit" className="submit-btn">
           Update Pet
         </button>

@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
+import { addPet } from '../../api/DashboardApi'; // Adjust the import path to your API file
 import "./css/CreateEditPetPage.css"; // Optional CSS for styling
 
-const CreatePetPage = () => {
+const CreateEditPetPage = () => {
+  const navigate = useNavigate(); // Initialize navigate
   const [petData, setPetData] = useState({
-    name: '',
-    type: '',
-    breed: '',
-    age: '',
-    description: '',
-    image: ''
+    ID: "",
+    name: "",
+    age: "",
+    sex: "",
+    breed: "",
+    date_found: "",
+    adoptable_from: "",
+    posted: "",
+    color: "",
+    coat: "",
+    size: "",
+    neutered: "",
   });
 
   const handleChange = (e) => {
@@ -16,91 +25,45 @@ const CreatePetPage = () => {
     setPetData({ ...petData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulated API request for creating a new pet
-    console.log("Creating New Pet:", petData);
-    alert('New pet created successfully!');
-    // Reset form after submission
-    setPetData({
-      name: '',
-      type: '',
-      breed: '',
-      age: '',
-      description: '',
-      image: ''
-    });
+    console.log("Submitting pet data:", petData); // Log the petData to check its structure
+
+    try {
+      await addPet({
+        ...petData,
+        age: Number(petData.age),
+        ID: Number(petData.ID),
+      });
+      alert("Pet added successfully!");
+      navigate('/dashboard');
+    } catch (error) {
+      console.error("Error adding pet:", error); // Log the entire error for more context
+      alert("Failed to add pet. Please try again.");
+    }
   };
 
   return (
-    <div className="create-edit-pet-page">
-      <h1>Create New Pet</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Pet Name</label>
-          <input
-            type="text"
-            name="name"
-            value={petData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="type">Pet Type</label>
-          <input
-            type="text"
-            name="type"
-            value={petData.type}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="breed">Breed</label>
-          <input
-            type="text"
-            name="breed"
-            value={petData.breed}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="age">Age</label>
-          <input
-            type="text"
-            name="age"
-            value={petData.age}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="description">Description</label>
-          <textarea
-            name="description"
-            value={petData.description}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="image">Image URL</label>
-          <input
-            type="text"
-            name="image"
-            value={petData.image}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit" className="submit-btn">
-          Create Pet
-        </button>
+    <div className="add-pet-page">
+      <h1 className="add-pet-title">Add New Pet</h1>
+      <form onSubmit={handleSubmit} className="add-pet-form">
+        {Object.keys(petData).map((key) => (
+          <div className="form-group" key={key}>
+            <label htmlFor={key} className="form-label">{key.replace('_', ' ').toUpperCase()}</label>
+            <input
+              type={key === 'date_found' || key === 'adoptable_from' || key === 'posted' ? 'date' : 'text'}
+              name={key}
+              value={petData[key]}
+              onChange={handleChange}
+              required
+              className="form-input"
+            />
+          </div>
+        ))}
+        <button type="submit" className="submit-btn">Add Pet</button>
       </form>
     </div>
   );
 };
 
-export default CreatePetPage;
+export default CreateEditPetPage;

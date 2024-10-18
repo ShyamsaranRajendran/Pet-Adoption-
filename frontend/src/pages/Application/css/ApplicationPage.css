@@ -1,87 +1,107 @@
+/* ApplicationPage.css */
+
 .multi-step-form {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background for form */
+  border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif; /* Clean font */
 }
 
 .form-title {
   text-align: center;
-  font-size: 28px;
-  font-weight: bold;
+  color: #4a4a4a; /* Dark color for title */
+  font-size: 2rem;
   margin-bottom: 20px;
-  color: #333;
 }
 
 .form-step {
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Space between steps */
+}
+
+h2 {
+  color: #007bff; /* Blue color for step titles */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Space between form fields */
 }
 
-.form-group label {
+label {
   display: block;
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 8px;
+  font-weight: bold; /* Bold labels */
+  margin-bottom: 5px; /* Space below labels */
+  color: #333; /* Darker text for labels */
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%; /* Full width for inputs */
+  padding: 10px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  transition: border-color 0.3s; /* Smooth transition */
 }
 
-.form-group textarea {
-  resize: vertical;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove outline */
+}
+
+textarea {
+  resize: none; /* Disable resize for textareas */
 }
 
 .form-navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space buttons */
   margin-top: 20px;
 }
 
-.prev-btn,
-.next-btn,
-.submit-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #007bff;
+button {
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold; /* Bold button text */
 }
 
 .prev-btn {
-  background-color: #6c757d;
+  background-color: #f0f0f0; /* Light gray for previous button */
+  color: #333; /* Dark text */
 }
 
-.prev-btn:hover,
-.next-btn:hover,
-.submit-btn:hover {
-  background-color: #0056b3;
-}
-
-.prev-btn:hover {
-  background-color: #5a6268;
+.next-btn {
+  background-color: #007bff; /* Blue color for next button */
+  color: white; /* White text */
 }
 
 .submit-btn {
-  background-color: #28a745;
+  background-color: #28a745; /* Green color for submit button */
+  color: white; /* White text */
 }
 
-.submit-btn:hover {
-  background-color: #218838;
+button:hover {
+  opacity: 0.9; /* Slightly fade buttons on hover */
+}
+
+@media (max-width: 600px) {
+  .multi-step-form {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .form-title {
+    font-size: 1.8rem; /* Smaller title on mobile */
+  }
 }

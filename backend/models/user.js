@@ -24,8 +24,7 @@ var userSchema = mongoose.Schema({
     },
     admin: {
         type: Number
-    },
-    cart: { type: mongoose.Schema.Types.ObjectId, ref: 'Cart' }
+    }
 });
 
 var User = module.exports = mongoose.model('User', userSchema);

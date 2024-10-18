@@ -30,11 +30,41 @@ const ApplicationPage = () => {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData); // Final submission logic
-    // Call backend API here
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('http://localhost:5000/applications', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData), // Send form data
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to submit application');
+    }
+
+    const data = await response.json();
+    console.log(data.message); // Log success message
+    // Optionally reset form or navigate to another page
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      address: "",
+      homeType: "",
+      petType: "",
+      experience: "",
+      additionalInfo: ""
+    });
+    window.location.href="/pets";
+  } catch (error) {
+    console.error('Error:', error);
+    alert('There was an error submitting your application. Please try again.'); // Handle error
+  }
+};
+
 
   return (
     <div className="multi-step-form">
