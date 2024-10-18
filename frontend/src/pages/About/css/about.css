@@ -46,3 +46,21 @@ p {
   font-size: 2.2rem;
   color: #fff;
 }
+.get-started-section {
+    background-color: white; /* Change to white */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .get-started-section h2 {
+    color: #004f6e; /* Example color for heading */
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .get-started-section p {
+    color: #333; /* Adjust the text color to ensure it's visible on a white background */
+    font-size: 18px;
+  }
+  
