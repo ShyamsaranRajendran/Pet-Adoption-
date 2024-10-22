@@ -31,22 +31,22 @@ const Header = () => {
         </div>
         <ul>
           <li>
-            <NavLink to="/dashboard" activeClassName="active">
+            <NavLink to="/Home" activeClassName="active">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard" activeClassName="active">
+            <NavLink to="/Shop" activeClassName="active">
               Shop
             </NavLink>
           </li>{" "}
           <li>
-            <NavLink to="/dashboard" activeClassName="active">
+            <NavLink to="/About" activeClassName="active">
               About us
             </NavLink>
           </li>{" "}
           <li>
-            <NavLink to="/dashboard" activeClassName="active">
+            <NavLink to="/Contact" activeClassName="active">
               Contact us
             </NavLink>
           </li>

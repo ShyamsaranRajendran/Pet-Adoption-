@@ -895,9 +895,63 @@ a {
 }
 
 .Footer{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(20%,1fr));
+  gap: 2rem;
+  width: 100%;
+   padding: 4rem 4rem;
+}
+.Footer .second{
+     display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   width: 100%;
+   padding: 1rem;
+}
+
+.Portion1{
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   width: 100%;
+}
+
+.second li{
+  list-style: none;
+  font-size: 20px;
+}
+.second li:first-child{
+  font-size: 25px;
+  font-weight: 900 !important;
+}
+
+
+.FooterTitle{
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+   width: 100%;
+   font-size: 29px;
+   font-weight: 600;
+   gap: 2rem;
+}
+
+.FooterTitle img{
+  width: 20%;
+}
+
+ .SocialLinks{
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
   gap: 1rem;
+}
+
+.SocialLinks .social{
+  font-size: 30px;
 }
 
 @media (max-width: 768px) {
