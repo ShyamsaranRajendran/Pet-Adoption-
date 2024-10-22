@@ -653,9 +653,10 @@ a {
 .customeIcon{
    width: auto;
    height: auto;
-   padding: 0.5rem;
+   padding: 1rem;
    border-radius: 50%;
    color: yellow;
+   background-color: #000;
   
 }
 
@@ -762,6 +763,143 @@ a {
   padding: 4rem 2rem;
   width: 100%;
 }
+
+.CatContents{
+   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-items: flex-start;
+  gap: 2rem;
+}
+
+.CatContents .T_color{
+   color: #FD7E14;
+   font-size: 39px;
+   font-weight: 800 !important;
+}
+
+.CatContents .HomeContents_h{
+     display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 30px;
+  font-weight: 900 !important;
+  color: black;
+}
+
+.CatContents .HomeContents_p{
+   display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+.BestProducts{
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  padding: 4rem 4rem;
+  width: 100%;
+}
+
+.BestProducts .products{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4rem 4rem;
+  width: 100%;
+}
+
+.BestProducts p{
+  font-size: 39px;
+  font-weight: 800;
+}
+
+.best-products{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(20%,1fr));
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.ByPet{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ByPet .topContents{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 5rem;
+  width: 100%;
+}
+
+.ByPet .animalsCard{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(15%,1fr));
+    gap: 2.3rem;
+    width: 100%;
+}
+
+.animalsCard .card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.NewsBlogs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.news{
+  padding: 2rem;
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(25%,1fr));
+  gap: 3rem;
+  width: 90%;
+}
+
+.NewsCard{
+    display: flex;
+  flex-direction: column;
+  border-radius: 10% 10% 0% 0% ;
+  gap: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+.tagger{
+  position: absolute;
+  top: 3%;
+  left: 4%;
+  border-radius: 43%;
+  padding: 0.3rem 1rem;
+  background-color: #252627;
+  color: #FD7E14;
+}
+
+.Footer{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 @media (max-width: 768px) {
   .topbar {
     flex-direction: column;
