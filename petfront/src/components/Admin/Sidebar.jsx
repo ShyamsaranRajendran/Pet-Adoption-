@@ -17,7 +17,7 @@ function Sidebar() {
         <img src={Dummy} alt="" className="SidebarLogo" />
         <h3 className="SidebarTitle">Dabang</h3>
       </div>
-      {/* <ul>
+      <ul>
         <li>
           <NavLink to="/dashboard" activeClassName="active">
             <MdOutlineSpaceDashboard /> <p>Dashboard</p>
@@ -63,7 +63,7 @@ function Sidebar() {
             <PiSignOut /> <p>Sign Out</p>
           </NavLink>
         </li>
-      </ul> */}
+      </ul>
       <div className="DashboardCards">
         <span className="circle1"></span>
         <span className="circle2"></span>
