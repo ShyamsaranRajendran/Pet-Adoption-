@@ -18,12 +18,6 @@ const Header = () => {
         <li>
           <Link to="/pets">Pets</Link>
         </li>
-        <li>
-          <Link to="/services">Service</Link>
-        </li>
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
       </ul>
      
     </header>

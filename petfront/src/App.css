@@ -1,0 +1,780 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #F8F9FA;
+}
+/* ========================== SideBar ================================ */
+
+.AdminDashboard {
+    width: 100%;
+    height: 100vh;
+}
+
+.Layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.4rem;
+    width: 100%;
+    background-color: FFFFFF;
+    padding: 2rem;
+      font-weight: 700; 
+     font-size: 16px;
+    line-height: 1.5; 
+    font-weight: 400;
+    background-color: #ffff;
+}
+
+.SidebarHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.SidebarLogo {
+    width: 40px;
+    height: 40px;
+    color: rgb(150, 68, 228);
+}
+
+.SidebarTitle {
+    font-size: 26px;
+    font-weight: 700;
+}
+.Sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.Sidebar ul li {
+    width: 100%;
+    border-radius: 4rem;
+}
+
+.Sidebar ul li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 4rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit; 
+}
+
+.Sidebar ul li:hover {
+    background-color:blueviolet;
+    color: white;
+}
+
+.Sidebar ul li a:hover {
+    color: white; /* Apply hover color change to the link text */
+}
+
+.Sidebar ul li a.active {
+    background-color:blueviolet; /* Different color for active links */
+    color: white;
+    font-weight: bold;
+}
+
+
+/* ========================== Dashboard Cards ================================ */
+
+.DashboardCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    background-color: blueviolet;
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    z-index: 1;
+    color: white; /* Font color for text inside the cards */
+    font-size: 16px; /* Standard font size for card content */
+    font-weight: 500; /* Medium font weight for card content */
+}
+.DashboardCards img{
+    z-index: 1;
+}
+
+.DashboardCards .circle1, .circle2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #cccccc46;
+    position: absolute;
+    
+}
+
+.DashboardCards .circle1 {
+    top: -6rem;
+    right: -6rem;
+}
+
+
+.DashboardCards .circle2 {
+    bottom: -6rem;
+    left: -6rem;
+}
+
+.DashboardCards button {
+    padding: 0.4rem 0.7rem;
+    background-color: white;
+    color: blueviolet; 
+    border: none; 
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    z-index: 1;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+
+.DashboardCards button:hover {
+    background-color: blueviolet; /* Button background matches the card on hover */
+    color: white; /* Text becomes white for contrast */
+}
+
+/* ================================== Header ======================================= */
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 20px; /* Adjust padding for better spacing */
+  background-color: #ffffff;
+}
+
+.Header h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.Header .dash-search form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Header .dash-search form .search-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Header .dash-search form .search-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.Header .dash-search input {
+  width: 400px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.Header .dash-search input:focus {
+  outline: none;
+  border-color: #007bff; 
+}
+
+.Header .lang {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.Header .dash-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Header .dash-user .bell-icon {
+  width: 35px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Header .dash-user .bell-icon svg {
+  width: 90%;
+  height: 80%;
+}
+
+.Header .dash-user img {
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.Header .dash-user img:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+}
+
+.Header .dash-user .bell-icon:hover {
+  color: #007bff; 
+}
+
+.DashboardContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.SalesAndVistor{
+  display: grid;
+  grid-template-columns: 50% auto;
+  width: 100%;
+}
+
+.Sales{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 1rem;
+  background-color: #ffff;
+  border-radius: 1rem;
+    width: 100%;
+
+}
+.Sales .SalesTop{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+    width: 100%;
+}
+.SalesTop div p{
+  font-size: 25px;
+  font-weight: 800;
+
+}
+.SalesTop div span{
+  font-size: 18px;
+  font-weight: 600;
+  color: #616161;
+
+}
+.SalesTop button{
+  display: flex;
+  flex-direction: row;
+  padding: 0.4rem 1rem;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6px;
+  border-color: black;
+  font-size: 18px;
+}
+.SalesCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+  gap: 1rem;
+ 
+  width: 100%;
+}
+
+.SalesCards .salescard{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 1.5rem 0.8rem;
+  height: auto;
+  border-radius: 10px;
+  background-color: #FFE2E5;
+}
+
+.salescard p:first-child{
+    font-size: 20px;
+    font-weight: 800;
+}
+.salescard p:nth-child(2){
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.salescard p:last-child{
+  font-size: 10px;
+  color: rgb(26, 26, 255);
+}
+
+.Vistor{
+  
+}
+
+.leaderboard{
+   /* Optional background color */
+
+}
+
+/* ========================== Global Adjustments ================================ */
+/* 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; 
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5; 
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================   Client ============================== */
+.ClientHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.topbar .phoneandemail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.topbar .phoneandemail div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.address {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Navbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-inline: auto;
+  z-index: 100;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: .8rem;
+  box-shadow: 0px 0px 10px rgb(0,0,0,0.1);
+}
+
+.Navbar div,ul  {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  font-size: 18px;
+}
+
+.Navbar div{
+  font-weight: 700;
+    gap: 1rem;
+
+}
+
+.Navbar ul{
+  gap: 2rem;
+}
+
+.Navbar ul li a{
+  text-decoration: none;
+    border-bottom: solid transparent .2rem;
+    border-radius: 6px;
+  color: black;
+  transition: 0.5s ease;
+}
+.Navbar ul li a:hover{
+  color: #FD7E14;
+  border-color: #FD7E14;
+}
+.NavbarRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.5rem !important;
+  gap: 1.5rem !important; /* Adjusted gap for better spacing */
+}
+
+.NavbarRight form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.NavbarRight form input {
+  border: none;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  outline: none;
+}
+
+.NavbarRight form input::placeholder {
+  color: #aaa;
+}
+
+.NavbarRight form input:focus {
+  border: 1px solid #ccc; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.NavbarRight form svg {
+  cursor: pointer;
+}
+
+.NavbarRight svg {
+  cursor: pointer;
+}
+
+.Home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.HomeBody {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ width: 100%;
+}
+
+.Homeleft{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Full height for the container */
+  overflow: hidden; 
+}
+
+.HomeRight{
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Full height for the container */
+  overflow: hidden; 
+}
+.BackGroundShape {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  width: 12%;
+  z-index: 1; /* Ensure it layers correctly */
+}
+.BackGroundShape2{
+   position: absolute;
+  bottom: -3rem;
+  left: 65%;
+  width: 12%;
+  z-index: 1;
+}
+
+.BackGroundBird {
+  position: absolute;
+  top: 2rem;
+  Right: 0;
+  width: 15vw;
+  z-index: 2;
+  bottom: -10%;
+}
+
+.BackGround {
+  position: absolute;
+  bottom: -10%;
+  right: 0;
+  width: 100%;
+  z-index: 0;
+  
+}
+
+.DogImg{
+  position: absolute;
+  bottom: -10%;
+  right: 0;
+  width: 70%;
+  z-index: 0;
+}
+
+.Homeleft .HomeContents{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  padding-left: 8rem;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+
+}
+.Homeleft .HomeContents_p{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.Homeleft .HomeContents .p_color{
+  color: #FD7E14;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.Homeleft .HomeContents_h{
+    display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 30px;
+  font-weight: 900 !important;
+  color: black;
+}
+.Adopt-btn{
+  padding: 1rem 1.2rem;
+  background-color: #000;
+  border: solid 2px white;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 1rem;
+}
+
+.HomeCategories{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.HomeCategories .topContents{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 5rem;
+  width: 100%;
+}
+.topContents p{
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.topContents div{
+  display: flex;
+  gap: 1.4rem;
+}
+.customeIcon{
+   width: auto;
+   height: auto;
+   padding: 0.5rem;
+   border-radius: 50%;
+   color: yellow;
+  
+}
+
+.CategoryCards{
+  display: grid;
+    padding: 0 5rem;
+  grid-template-columns: repeat(auto-fill,minmax(20%,1fr));
+  gap: 4rem;
+  width: 100%;
+}
+
+.cards{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10% 10% 0% 0% ;
+  background-color: white;
+  gap: 1rem;
+  overflow: hidden;
+  height: auto;
+}
+
+.cards img{
+  height: 300px;
+}
+
+.cards div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.featuredProducts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+.FeaturedProductCards{
+    display: grid;
+    padding: 0 5rem;
+  grid-template-columns: repeat(auto-fill,minmax(30%,1fr));
+  gap: 4rem;
+  width: 100%;
+}
+
+.featuredcard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 5rem;
+  width: 100%;
+}
+
+ .NameAndLike{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.NameAndLike .like{
+  font-size: 30px;
+}
+
+.CatImgContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Equal width columns for left and right */
+  padding-top: 3rem;
+  width: 80%;
+  height: 100%;
+}
+.CatImgContainer .CatLeft{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.CatLeft img{
+  width: 80%;
+}
+
+.CatLeft .catImg{
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  bottom: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CatImgContainer .CatRight{
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .topbar .phoneandemail,
+  .address {
+    width: 100%;
+  }
+
+  .address {
+    text-align: left;
+  }
+}

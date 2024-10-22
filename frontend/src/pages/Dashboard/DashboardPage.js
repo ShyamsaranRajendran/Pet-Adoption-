@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/DashboardPage.css'; // Ensure your styles are imported
-import { allPets, deletePet } from '../../api/DashboardApi';
+import { allPets, deletePet } from '../../api/DashboardApi'; // Removed dashcontent import
 
 const DashboardPage = () => {
   const [pets, setPets] = useState([]);
@@ -12,9 +12,10 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const data = await allPets();
-        setPets(data.animals);
+        const petsData = await allPets();
+        setPets(petsData.animals);
       } catch (error) {
+        console.error('Fetch error:', error); // Log the full error for debugging
         setError('Error fetching pets. Please try again.');
       } finally {
         setLoading(false);

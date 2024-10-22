@@ -9,15 +9,7 @@ function Footer() {
           <p>Helping pets find loving homes, one paw at a time.</p>
         </div>
         
-        <div style={styles.column}>
-          <h3 style={styles.columnTitle}>Quick Links</h3>
-          <ul style={styles.list}>
-            <li><a href="/" style={styles.footerLink}>Home</a></li>
-            <li><a href="/adopt" style={styles.footerLink}>Adopt</a></li>
-            <li><a href="/donate" style={styles.footerLink}>Donate</a></li>
-            <li><a href="/contact" style={styles.footerLink}>Contact Us</a></li>
-          </ul>
-        </div>
+       
 
         <div style={styles.column}>
           <h3 style={styles.columnTitle}>Contact Us</h3>

@@ -19,6 +19,15 @@ export const allPets = async () => {
   }
 };
 
+// Fetch all pets
+export const dashcontent = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/pet/dash/content`); // Use GET for fetching all pets
+    return response.data; // Return the data directly
+  } catch (error) {
+    handleError(error);
+  }
+};
 // Add a new pet
 export const addPet = async (petData) => {
   try {

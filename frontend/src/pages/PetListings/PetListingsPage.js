@@ -30,6 +30,7 @@ function PetListingsPage() {
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null);
   const [selectedPet, setSelectedPet] = useState(null); // State to hold selected pet for details
+  const [ageFilter, setAgeFilter] = useState(''); // State for age filter
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -77,16 +78,40 @@ function PetListingsPage() {
     return images[randomIndex];
   };
 
+  // Handle age filter change
+  const handleAgeFilterChange = (event) => {
+    setAgeFilter(event.target.value);
+  };
+
+  // Filter pets based on selected age filter
+  const filteredPets = pets.filter(pet => {
+    const matchesAge = ageFilter ? pet.age === parseInt(ageFilter) : true;
+    return matchesAge;
+  });
+
   // Render pet listings
   return (
     <div className="pet-listings-page">
       <h1 className="page-title">Pet Listings</h1>
+
+      {/* Filter Options */}
+      <div className="filter-options">
+        <select onChange={handleAgeFilterChange} value={ageFilter}>
+          <option value="">All Ages</option>
+          <option value="1">1 year</option>
+          <option value="2">2 years</option>
+          <option value="3">3 years</option>
+          <option value="4">4 years</option>
+          <option value="5">5 years</option>
+          {/* Add more age options as needed */}
+        </select>
+      </div>
+
       <div className="pet-listings">
-        {pets.map((pet) => (
+        {filteredPets.map((pet) => (
           <div key={pet._id} className="pet-card" onClick={() => handlePetClick(pet)}>
             <h2 className="pet-name">{pet.name}</h2>
             <img className="pet-image" src={getRandomImage()} alt={pet.name} /> {/* Random image */}
-            <p className="pet-type">Type: {pet.type}</p>
             <p className="pet-age">Age: {pet.age} years</p>
             <button 
               className="adopt-button" 
@@ -104,7 +129,6 @@ function PetListingsPage() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedPet.name}</h2>
             <img className="modal-image" src={selectedPet.image} alt={selectedPet.name} />
-            <p><strong>Type:</strong> {selectedPet.type}</p>
             <p><strong>Age:</strong> {selectedPet.age} years</p>
             <p><strong>Description:</strong> {selectedPet.description}</p>
             <p><strong>Color:</strong> {selectedPet.color}</p>

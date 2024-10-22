@@ -99,4 +99,39 @@ router.get('/all', async (req, res) => {
   res.status(result.success ? 200 : 500).json(result);
 });
 
+
+router.post('/dash/content',async (req,res)=>{
+ try {
+  console.log('hi')
+        // Perform aggregation for breed and color
+        const breedAnalytics = await Animal.aggregate([
+            { $group: { _id: "$breed", count: { $sum: 1 } } },
+        ]);
+
+        const colorAnalytics = await Animal.aggregate([
+            { $group: { _id: "$color", count: { $sum: 1 } } },
+        ]);
+
+        // Format the data for sending to the frontend
+        const formattedBreedData = breedAnalytics.map(item => ({
+            breed: item._id,
+            count: item.count,
+        }));
+
+        const formattedColorData = colorAnalytics.map(item => ({
+            color: item._id,
+            count: item.count,
+        }));
+
+        // Send the formatted data to the frontend
+        res.json({
+            breeds: formattedBreedData,
+            colors: formattedColorData,
+        });
+    } catch (error) {
+        console.error("Error fetching analytics:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+});
+
 module.exports = router;
