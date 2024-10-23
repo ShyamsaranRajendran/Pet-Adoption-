@@ -1798,5 +1798,5 @@ a {
 
 .pagination {
   display: flex;
-  justify-content:
+  justify-content: row;
 }
