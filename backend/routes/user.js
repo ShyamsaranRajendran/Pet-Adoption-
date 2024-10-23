@@ -222,4 +222,5 @@ router.post("/email", async (req, res) => {
     res.status(500).json({ error: "Failed to send email" });
   }
 });
+
 module.exports = router;

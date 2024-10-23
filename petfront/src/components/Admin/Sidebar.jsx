@@ -49,11 +49,11 @@ function Sidebar() {
             <MdOutlineProductionQuantityLimits /> <p>Pet Product Limits</p>
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/dashboard/sales-report" activeClassName="active">
             <BsGraphUpArrow /> <p>Sales Report</p>
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to="/dashboard/messages" activeClassName="active">
             <FaRegMessage /> <p>Messages</p>

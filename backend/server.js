@@ -34,11 +34,15 @@ const pages = require('./routes/pages');
 const pet = require('./routes/pet');
 const userRoutes = require('./routes/user');
 const PetProducts = require('./routes/PetFood');
+const Order = require('./routes/Order');
+const request = require('./routes/AdoptReq');
 
 app.use('/', pages);
 app.use('/pet',pet);
-app.use('/user', userRoutes); 
+app.use('/user', userRoutes);
+app.use('/order',Order);
 app.use('/PetFood',PetProducts);
+app.use('/request',request);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
