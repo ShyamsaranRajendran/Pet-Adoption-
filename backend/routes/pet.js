@@ -93,7 +93,6 @@ router.get('/find/:id', async (req, res) => {
 
 router.get('/all', async (req, res) => {
         console.log("reached");
-
   const result = await getAllAnimals();
   console.log(result)
   res.status(result.success ? 200 : 500).json(result);

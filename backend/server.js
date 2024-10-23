@@ -33,10 +33,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 const pages = require('./routes/pages');
 const pet = require('./routes/pet');
 const userRoutes = require('./routes/user');
+const PetProducts = require('./routes/PetFood');
 
 app.use('/', pages);
 app.use('/pet',pet);
 app.use('/user', userRoutes); 
+app.use('/PetFood',PetProducts);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

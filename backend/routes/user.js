@@ -196,6 +196,30 @@ router.post("/reset-password", async (req, res) => {
   }
 });
 
+router.get("/all", async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json({ message: "Data sent", Users: users });
+  } catch (err) {
+    console.error(err); // Log the error for debugging
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
+router.post("/email", async (req, res) => {
+  const { to, subject, text } = req.body;
 
+  if (!to || !subject || !text) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
+
+  try {
+    await mailer(to, subject, text);
+    console.log("Email sent")
+    res.status(200).json({ message: "Email sent successfully!" });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).json({ error: "Failed to send email" });
+  }
+});
 module.exports = router;

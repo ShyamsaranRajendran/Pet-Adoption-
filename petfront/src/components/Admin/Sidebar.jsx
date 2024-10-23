@@ -10,6 +10,7 @@ import { IoSettings } from "react-icons/io5";
 import { PiSignOut } from "react-icons/pi";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import Dummy from "../assets/dummy logo.svg";
+
 function Sidebar() {
   return (
     <div className="Sidebar">
@@ -24,8 +25,8 @@ function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/dashboard/leaderboard" activeClassName="active">
-            <MdLeaderboard /> <p>Leaderboard</p>
+          <NavLink to="/dashboard/requests" activeClassName="active">
+            <MdLeaderboard /> <p>Adoption Requests</p>
           </NavLink>
         </li>
         <li>
@@ -35,12 +36,17 @@ function Sidebar() {
         </li>
         <li>
           <NavLink to="/dashboard/products" activeClassName="active">
-            <MdOutlinePets /> <p>Products</p>
+            <MdOutlinePets /> <p>Pet Products</p>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/dashboard/pet" activeClassName="active">
+            <MdOutlinePets /> <p>Pet</p>
           </NavLink>
         </li>
         <li>
           <NavLink to="/dashboard/product-limits" activeClassName="active">
-            <MdOutlineProductionQuantityLimits /> <p>Product Limits</p>
+            <MdOutlineProductionQuantityLimits /> <p>Pet Product Limits</p>
           </NavLink>
         </li>
         <li>
@@ -54,8 +60,8 @@ function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/dashboard/settings" activeClassName="active">
-            <IoSettings /> <p>Settings</p>
+          <NavLink to="/dashboard/food" activeClassName="active">
+            <IoSettings /> <p>Pet Food</p>
           </NavLink>
         </li>
         <li>
