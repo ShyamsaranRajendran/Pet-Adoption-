@@ -1795,4 +1795,145 @@ a {
   margin: 10px;
   text-align: center;
 }
+/*contact page*/
+.ContactSection {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 
+.ContactForm {
+  width: 50%;
+  padding: 20px;
+}
+
+.ContactForm h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-row input {
+  margin-right: 15px;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.SendMessageBtn {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ContactInfo {
+  width: 40%;
+  padding: 20px;
+}
+
+.ContactInfo p {
+  margin-bottom: 20px;
+}
+
+.ContactDetails div {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.ContactDetails i {
+  margin-right: 10px;
+  color: #ff6600;
+}
+.ContactSection {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.ContactForm {
+  width: 50%;
+  padding: 20px;
+}
+
+.ContactForm h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.SendMessageBtn {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ContactInfo {
+  width: 40%;
+  padding: 20px;
+}
+
+.ContactInfo p {
+  margin-bottom: 20px;
+}
+
+.ContactDetails div {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.ContactDetails i {
+  margin-right: 10px;
+  color: #ff6600;
+}
+
+.MapSection {
+  margin: 50px 0;
+}
+
+.MapSection iframe {
+  width: 100%;
+  border-radius: 8px;
+}
