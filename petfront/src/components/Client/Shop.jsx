@@ -290,7 +290,7 @@ const About = () => {
       alt="background-slide1" 
       className="BackGroundImage" 
       style={{ 
-        height: '100%', 
+        height: '90%', 
         width: '100%', 
         objectFit: 'cover', 
         position: 'absolute', 
@@ -307,8 +307,8 @@ const About = () => {
         <h1>everything you need</h1>
       </div>
       <div className="HomeContents_p">
-        <p>Sociis blandit et pellentesque aliquet at quisque tortor lacinia</p>
-        <p>nullam. Mattis aenean scelerisque dui libero</p>
+        <p>"Explore the joy of adopting and see how your life can change. "</p>
+        <p>Let’s help our furry friends find happiness, one adoption at a time.</p>
       </div>
       <button className="Adopt-btn">Shop Now</button>
     </div>
@@ -338,11 +338,11 @@ const About = () => {
       alt="background-slide1" 
       className="BackGroundImage" 
       style={{ 
-        height: '100%', 
+        height: '90%', 
         width: '100%', 
         objectFit: 'cover', 
         position: 'absolute', 
-        filter: 'brightness(0.4)',
+        filter: 'brightness(0.5)',
         top: 0, 
         left: 0, 
         zIndex: -1 // Behind the content 
@@ -350,13 +350,15 @@ const About = () => {
    
     />
     <div className="HomeContents">
-      <p className="p_color">Your Custom Title</p>
+      <p className="p_color">Pet Dabang</p>
       <div className="HomeContents_h">
-        <h1>Custom Slide Content</h1>
-        <h1>Additional Slide 2 Heading</h1>
+        <h1>Find your perfect furry friend!</h1>
+        <h1>Join us and give pets a loving home.</h1>
       </div>
       <div className="HomeContents_p">
-        <p>Additional description text for Slide 2.</p>
+        <p>Ready to bring a new member into your family?</p>
+        <p>Our adoption center has pets of all breeds and personalities,</p>
+        <p> just waiting to meet their forever homes.</p>
       </div>
       <button className="Adopt-btn">Learn More</button>
     </div>
