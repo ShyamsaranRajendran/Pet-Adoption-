@@ -5,6 +5,7 @@ import AdoptionReuests from './pages/AdoptionReuests';
 import DashboardContent from './pages/DashboardContent';
 import PetProducts from './pages/PetProducts';
 import PetProductsLimit from './pages/PetProductsLimit';
+import Orders from './pages/Orders';
 import PetFood from './pages/PetFood';
 import Message from './pages/message';
 import Home from './components/Client/Home'; 
@@ -26,6 +27,7 @@ function App() {
             <Route path="product-limits" element={<PetProductsLimit />} />
             <Route path='messages' element={<Message/>} />
             <Route path="requests" element={<AdoptionReuests />} />
+            <Route path="orders" element={<Orders />} />
             {/* <Route path="reports" element={<Reports />} /> */}
           </Route>
           <Route path="home" element={<Home />} />
