@@ -59,12 +59,12 @@ const Contact = () => {
         {/* Contact Info Section */}
         <div className="ContactInfo">
           <p>
-            At et vehicula sodales est proin turpis pellentesque sinulla a aliquam amet rhoncus quisque eget sit.
+          Find your perfect companion and start a new chapter together.
           </p>
           <div className="ContactDetails">
-            <div><i className="fas fa-map-marker-alt"></i> 8592 Fairground St. Tallahassee, FL 32303</div>
-            <div><i className="fas fa-envelope"></i> rgarton@outlook.com</div>
-            <div><i className="fas fa-phone"></i> +775 378-6348</div>
+            <div><i className="fas fa-map-marker-alt"></i>15, Gandhi Street, Anna Nagar, Chennai, Tamil Nadu 600040</div>
+            <div><i className="fas fa-envelope"></i>petdabang.gmail.com</div>
+            <div><i className="fas fa-phone"></i>+379 871-8371</div>
             <div><i className="fas fa-clock"></i> Mon - Fri: 10AM - 10PM</div>
           </div>
         </div>
