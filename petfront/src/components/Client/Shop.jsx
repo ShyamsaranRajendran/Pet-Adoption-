@@ -7,6 +7,16 @@ import Vector from "../assets/Vector.svg";
 import dog_img from "../assets/Fish.png";
 import { BiRightArrowAlt, BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { FcLike } from "react-icons/fc";
+//new
+import ptImage from '../assets/pt.png';
+import caImage from '../assets/ca.png';
+
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+
 
 // Adding icons for the pets
 import CatIcon from '../assets/cat.png';
@@ -240,37 +250,124 @@ const Shop = () => {
   );
 };
 
+
 const About = () => {
+  // Settings for the slider
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    adaptiveHeight: true, // This can help reduce extra spacing
+  };
+
   return (
     <div className="About">
-      <div className="HomeBody">
-        <div className="Homeleft">
-          <img src={Shape} alt="background" className="BackGroundShape" />
-          <img src={Bird} alt="" className="BackGroundBird" />
-          <img src={Shape} alt="background2" className="BackGroundShape2" />
-          <div className="HomeContents">
-            <p className="p_color">Pet Dabang</p>
-
-            <div className="HomeContents_h">
-              <h1>A pet store with </h1>
-              <h1>everything you need</h1>
-            </div>
-            <div className="HomeContents_p">
-              <p>
-                Sociis blandit et pellentesque aliquet at quisque tortor lacinia
-              </p>
-              <p>nullam. Mattis aenean scelerisque dui libero</p>
-            </div>
-            <button className="Adopt-btn">Shop Now</button>
-          </div>
-        </div>
-        <div className="HomeRight">
-          <img src={Vector} alt="" className="BackGround" />
-          <img src={dog_img} alt="" className="DogImg" />
-        </div>
+      <Slider {...settings}>
+        
+      {/* Slide 1 */}
+<div className="HomeBody">
+  <div className="Homeleft">
+    {/* Background image for Slide 1 */}
+    <img 
+      src={Shape} 
+      alt="background-shape" 
+      className="BackGroundShape" 
+      style={{ height: '30px', width: '30px', filter: 'brightness(0.3)' }} 
+    />
+    <img 
+      src={Bird} 
+      alt="background-bird" 
+      className="BackGroundBird" 
+      style={{ height: '200px', width: '200px' }} 
+    />
+    <img 
+      src={ptImage} 
+      alt="background-slide1" 
+      className="BackGroundImage" 
+      style={{ 
+        height: '100%', 
+        width: '100%', 
+        objectFit: 'cover', 
+        position: 'absolute', 
+        filter: 'brightness(0.4)',
+        top: 0, 
+        left: 0, 
+        zIndex: -1 // Behind the content 
+      }} 
+    />
+    <div className="HomeContents">
+      <p className="p_color">Pet Dabang</p>
+      <div className="HomeContents_h">
+        <h1>A pet store with</h1>
+        <h1>everything you need</h1>
       </div>
+      <div className="HomeContents_p">
+        <p>Sociis blandit et pellentesque aliquet at quisque tortor lacinia</p>
+        <p>nullam. Mattis aenean scelerisque dui libero</p>
+      </div>
+      <button className="Adopt-btn">Shop Now</button>
+    </div>
+  </div>
+</div>
+
+{/* Slide 2 */}
+<div className="HomeBody">
+  <div className="Homeleft">
+    {/* Background image for Slide 2 */}
+   
+      <img 
+      src={Shape} 
+      alt="background-shape" 
+      className="BackGroundShape" 
+      style={{ height: '30px', width: '30px' }} 
+    />
+    <img 
+      src={Bird} 
+      alt="background-bird" 
+      className="BackGroundBird" 
+      style={{ height: '200px', width: '200px' }} 
+    />
+    
+     <img 
+      src={caImage} 
+      alt="background-slide1" 
+      className="BackGroundImage" 
+      style={{ 
+        height: '100%', 
+        width: '100%', 
+        objectFit: 'cover', 
+        position: 'absolute', 
+        filter: 'brightness(0.4)',
+        top: 0, 
+        left: 0, 
+        zIndex: -1 // Behind the content 
+      }} 
+   
+    />
+    <div className="HomeContents">
+      <p className="p_color">Your Custom Title</p>
+      <div className="HomeContents_h">
+        <h1>Custom Slide Content</h1>
+        <h1>Additional Slide 2 Heading</h1>
+      </div>
+      <div className="HomeContents_p">
+        <p>Additional description text for Slide 2.</p>
+      </div>
+      <button className="Adopt-btn">Learn More</button>
+    </div>
+  </div>
+</div>
+
+  
+
+      </Slider>
     </div>
   );
-}
+};
 
 export default Shop;
