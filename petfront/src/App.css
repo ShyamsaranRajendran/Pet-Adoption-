@@ -1937,3 +1937,174 @@ textarea {
   width: 100%;
   border-radius: 8px;
 }
+/*About*/
+.about-container {
+  padding: 2rem;
+  background-color: #F8F9FA;
+}
+
+.about-details {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-details h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.about-details p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.about-stats .stat {
+  text-align: center;
+}
+
+.about-stats .stat h3 {
+  font-size: 2rem;
+  color: #FF5733;
+}
+
+.about-stats .stat p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.team-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.team-member h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #777;
+}
+
+
+
+/* testimonals */
+
+.testimonials-section {
+  padding: 3rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonial-content {
+  max-width: 450px;
+  text-align: left;
+}
+
+.stars {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.testimonial-content h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-role {
+  font-size: 1rem;
+  color: #777;
+}
+
+.testimonial-img {
+  position: relative;
+  width: 250px; /* Increase the width */
+  height: 250px; /* Increase the height */
+}
+
+.image-frame {
+  background: linear-gradient(45deg, #FFA500, #FF6347); /* Gradient for the frame */
+  padding: 10px; /* Reduce the padding to show a larger image */
+  border-radius: 50%;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.testimonial-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.testimonial-controls button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.testimonial-controls button:hover {
+  color: #FF5733;
+}
